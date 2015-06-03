@@ -1,0 +1,118 @@
+.site-header-bottom {
+  #navigation {
+    text-transform: uppercase;
+    padding: 0;
+    li {
+      line-height: 50px;
+      list-style: none;
+      margin-top: 5px;
+      float: left;
+      @include breakpoint($max-phone) {
+        margin-top: 0;
+      }
+    }
+  }
+  
+  .primary-wrapper {
+    background: white;
+    border-bottom: $border_thin;
+    position: relative;
+    z-index: 5;
+    @include breakpoint($max-phone) {
+      display: none;
+    }
+  }
+
+  .secondary-wrapper {
+    border-bottom: $border_very_thin;
+    background: $header_bg;
+    @include transition(transform .5s);
+    @include transform(translate(0, -56px));
+    @include transform(translate3d(0, -56px, 0));
+    position: relative;
+    z-index: 2;
+    .submenu-expanded & {
+      @include transform(translate(0, 0));
+      @include transform(translate3d(0, 0, 0));
+    }
+    @include breakpoint($max-phone) {
+      display: none;
+    }
+  }
+
+  #primary,
+  #secondary {
+    max-width: $main_width;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+  }
+
+  #primary {
+    a {
+      position: relative;
+      display: block;
+      &.active {
+        color: $main_color;
+        @include link-mark;
+      }
+    }
+  }
+  
+  #navbar {
+    display: none;
+    @include breakpoint($max-phone) {
+      display: block;
+      z-index: 3;
+      li {
+        padding: 0;
+        background: $main_color;        
+        margin: 0;
+        width: 100%;
+        border-bottom: $border_dashed_white;
+        @include transition(background, .8s);
+        &:hover {
+          background: $hover_bg_color;
+          @include transition(background, .8s);
+        }
+        a {
+          color: #fff;
+          margin-left: 25px;
+          display: block;
+          &:hover {
+            @include no-link-mark;
+            //color: $header_text_color;
+          }
+          &.active.active-trail {
+            @include no-link-mark;
+            color: $header_text_color;
+          }
+        }
+        &.expanded {
+          li {
+            background: $hover_mobile_bg;
+            border-bottom: none;
+            &:not(first-child) {
+              border-top: $border_dashed_gray;
+            }
+            a {
+              color: $header_text_color;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @include breakpoint($max-phone) {
+    height: 0;
+    @include transform(translate(0, -610px));
+    @include transform(translate3d(0, -610px, 0));
+  }
+
+  .menu-expanded & {
+    height: auto;
+    @include transform(translate(0, -20px));
+    @include transform(translate3d(0, -20px, 0));
+  }
+}

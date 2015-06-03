@@ -1,0 +1,75 @@
+// Retina sprites in Compass
+// ---------------------------------------------------------------------------
+    $sprite1x: sprite-map("1x/*.png", $spacing: 1px);
+    $sprite2x: sprite-map("2x/*.png", $spacing: 2px);
+
+    // NOTE: If this is complaining about arguments, make sure to check
+    //       to see if Compass is imported to the project
+
+    %sprite-image {
+        background-repeat: no-repeat;
+        background-image: sprite-url($sprite1x);
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-image: sprite-url($sprite2x);
+            background-size:
+                (image-width(sprite-path($sprite2x)) / 2)
+                (image-height(sprite-path($sprite2x)) / 2); }
+    }
+
+    // Sprite unit with background
+    // -- Extends placeholder `sprite-image`
+    @mixin sprite($name, $x: 0, $offsetX: 0, $offsetY: 0) {
+        @extend %sprite-image;
+
+        @if $x == 0 { $x: nth(sprite-position($sprite1x, $name), 1); }
+
+        background-position:
+            ( $x + $offsetX )
+            ( nth(sprite-position($sprite1x, $name), 2) + $offsetY );
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-position:
+                ( $x + $offsetX )
+                ( (nth(sprite-position($sprite2x, $name), 2) / 2) + $offsetY ); }
+    }
+
+    // Sprite unit with its dimensions as width and height.
+    // -- Uses mixin `sprite`
+    @mixin sprite-dimensions($name, $x: 0, $offsetX: 0, $offsetY: 0) {
+        @include sprite($name, $x, $offsetX, $offsetY);
+        width: image-width(sprite-file($sprite1x, $name));
+        height: image-height(sprite-file($sprite1x, $name));
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            width: image-width(sprite-file($sprite2x, $name)) / 2;
+            height: image-height(sprite-file($sprite2x, $name)) / 2; }
+    }
+
+    // Sprite unit with half its dimensions as negative margin-top and -left.
+    // -- Uses mixin `sprite-dimensions`
+    @mixin sprite-centered($name, $x: 0, $offsetX: 0, $offsetY: 0, $marginTop: true, $marginLeft: true) {
+        @include sprite-dimensions($name, $x, $offsetX, $offsetY);
+
+        @if $marginTop { margin-top: (image-height(sprite-file($sprite1x, $name)) / 2) * -1; }
+        @if $marginLeft { margin-left: (image-width(sprite-file($sprite1x, $name)) / 2) * -1; }
+    }
+
+    // Sprite widths scaled
+    @mixin sprite-data-scaled($name, $scaled: 1) {
+        width: image-width(sprite-file($sprite1x, $name)) / $scaled;
+        height: image-height(sprite-file($sprite1x, $name)) / $scaled;
+        background-size: (image-width(sprite-path($sprite1x)) / $scaled) (image-height(sprite-path($sprite1x)) / $scaled);
+
+        background-position:
+            0
+            ( nth(sprite-position($sprite1x, $name), 2) / $scaled );
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            width: (image-width(sprite-file($sprite2x, $name)) / 2) / $scaled;
+            height: (image-height(sprite-file($sprite2x, $name)) / 2) / $scaled;
+            background-position:
+                0
+                ( (nth(sprite-position($sprite2x, $name), 2) / 2) / $scaled );
+            background-size: ((image-width(sprite-path($sprite2x)) / 2) / $scaled) ((image-height(sprite-path($sprite2x)) / 2) / $scaled); }
+    }

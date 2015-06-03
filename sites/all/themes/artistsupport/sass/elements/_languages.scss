@@ -1,0 +1,62 @@
+#block-lang_dropdown-language_content {
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  @include breakpoint($max-phone) {
+    margin-top: -10px;
+  }
+  
+  .dd-container {
+    width: 200px;
+    @include breakpoint($max-phone){
+      width: 60px;
+      right: 40px;
+    }
+  }
+  .dd-select,
+  .dd-options {
+    width: 200px;
+    @include breakpoint($max-phone){
+      width: 60px;
+    }
+  }
+
+  .dd-select {
+    background: rgb(238, 238, 238);
+  }
+  
+  .dd-selected,
+  .dd-option {
+     @include font-size(13);
+  }
+  .dd-options {
+    height: 80px;
+    @include breakpoint($max-phone){
+      height: 67px;
+    }
+  }
+  
+  .dd-option {
+    background: #F3F3F3;
+    &:hover {
+      background: #D0CDCD;
+    }
+    &.dd-option-selected {
+      .hidden-lang & {
+        display: none;
+      }
+    }
+  }
+  
+  .dd-option-selected .dd-option-text {
+    line-height: 40px;
+  }
+  .form-item {
+    margin: 0;
+  }
+  @include breakpoint($max-phone){
+    label {
+      display: none;
+    }
+  }
+}

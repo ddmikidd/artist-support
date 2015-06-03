@@ -1,0 +1,178 @@
+.page-services {
+  #main {
+    margin-top: -26px;
+    @include breakpoint($max-phone) {
+      margin-top: -2px;
+    }
+  }
+  
+  #content-header {
+    background: #000 url('../../images/services_back.png') no-repeat;
+    background-position-x: center;
+    height: 320px;
+    margin-top: -30px;
+    margin-left: -200px;
+    margin-right: -200px;
+    position: relative;
+    @include breakpoint($max-phone) {
+      margin-top: -20px;
+    }
+    .title {
+      border: none;
+      text-align: center;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 1px 2px 4px #000000;
+      position: relative;
+      top: 120px;
+    }
+  }
+  #content {
+    margin-top: 80px;
+  }
+
+  #content-area {
+    position: relative;
+    &:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: $main_color;
+    }
+  }
+  
+  #block-views-services-block_2 {
+    float: left;
+    width: 44%;
+    margin-right: 20px;
+    margin-top: -30px;
+    position: relative;
+    @include breakpoint($max-phone) {
+      width: 100%;
+    }
+    .views-field-title {
+      a {
+        &:hover {
+          color: $main_color;
+        }
+      }
+    }
+    .views-field-view-node {
+      a {
+        text-indent: -999px;
+        display: block;
+        position: absolute;
+        left: 526px;
+        margin-top: -125px;
+        width: 220px;        
+        height: 148px;
+        z-index: 5;
+      }
+    }
+  }
+  
+  #block-views-services-block_1 {
+    float: left;
+    width: 22%;
+    margin: 0;
+    @include breakpoint($max-phone) {
+      width: 100%;
+    }
+    .views-field-field-class-image {
+      width: 244px;
+    }
+  }
+  
+  //This is for 2 services.
+  #block-system-main {
+    margin-top: 50px;
+    float: left;
+    .views-row {
+      @include my-clearfix;
+      
+      &.views-row-1,
+      &.views-row-2 {
+        position: relative;
+        &:before {
+          content: " ";
+          display: block;
+          position: absolute;
+          height: 2px;
+          width: 100%;
+          background: $main_color;
+          margin-top: 30px;
+        }
+      }
+//      .views-row-2 {
+//        float: left;
+//      }
+    }
+    .views-field-title {
+      a {
+        &:hover {
+          color: $main_color;
+        }
+      }
+    }
+    .views-field-body {
+      float: left;
+      width: 44%;
+      margin-right: 20px;
+      @include breakpoint($max-phone) {
+        width: 100%;
+      }
+    }
+    .views-field-view-node {
+      a {
+        text-indent: -999px;
+        display: block;
+      }
+    }
+  }
+  
+  .views-field-field-class-image,
+  .views-field-field-sample-image-big {
+    margin-top: 20px;
+    padding-bottom: 40px;
+  }
+ 
+  .views-field-title {
+   a {
+    @include common-headline-style;
+    margin-bottom: 20px;
+    //border-bottom: $border_thin;
+    display: block;
+   }
+  }
+}
+
+//Styling for "Ställ ut din konst" and "Köp&Sälj webbshop" content type
+.node-type-your-exhibition,
+.node-type-web-shop-service {
+  .group-left,
+  .group-right-items {
+    float: left;
+  }
+  .group-left {
+    width: 49%;
+    margin-right: 15px;
+    @include breakpoint($max-phone) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  .group-right-items {
+    width: calc(51% - 30px);
+    margin-left: 15px;
+    @include breakpoint($max-phone) {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 50px;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}

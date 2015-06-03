@@ -1,0 +1,49 @@
+#header {
+  padding: 0;
+  opacity: 0;
+  @include transition(opacity, .8s);
+  &.fade-in {
+    opacity: 1;
+  }
+}
+
+.site-header-top,
+#main {
+  max-width: $main_width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#site-header-wrapper {
+  position: relative;
+  z-index: 10;
+  background: $header_bg;
+  padding: 3.3rem;
+  border-bottom: $border_thick;
+  @include pad-size(30);
+  height: $navigation_height;
+  @include breakpoint($max-phone){
+    height: 60px;
+    @include pad-size(20);
+    .site-logo-wrapper {
+      img {
+        width: 180px;
+        height: auto;
+      }
+    }
+  }
+  .menu-expanded & {
+    border-bottom: none;
+  }
+}
+
+.site-logo-wrapper {
+  float: left;
+  a {
+    display: inline-block;
+  }
+}
+
+#header-region {
+  float: right;
+}

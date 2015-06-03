@@ -1,0 +1,98 @@
+////////////////////////////////////////////////////////////////////////////////
+// "vars" partial
+// --------------------
+//
+////////////////////////////////////////////////////////////////////////////////
+
+//
+// Variables
+////////////////////////////////////////
+
+
+//
+// Widths
+//
+$first_sidebar_width: 190px;
+$second_sidebar_width: 230px;
+$page_width: 1170px;
+$main_width: 1170px;
+
+//
+// Breakpoints
+//
+$tablet: $page_width; //This is set to page width by default
+$smaller_screens: 800px;
+$mobile: 480px;
+
+$max-mobile: 400px;
+$max-phone: 640px;
+$min-phone: 641px;
+$max-tablet: 855px;
+$min-netbook: 856px;
+$min-desktop: 961px;
+$middle-desktop: 1200px;
+$min-cinema: 1801px;
+
+//
+// Heights
+//
+$navigation_height: 100px;
+$footer_height: auto;
+
+//
+// Padding
+//
+$section_padding: 10;
+$mobile_padding: 5;
+
+//
+// Margin
+//
+$section_margin: 15px;
+$section_small_margin: 10px;
+
+//
+// Backgrounds, change these when you get started with your theme.
+//
+$border: 0px dotted #888;
+$border_very_thin: 1px solid #F9461C;
+$border_dashed_white: 1px dashed #fff;
+$border_dashed_gray: 1px dashed #4A4A4A;
+$border_thin: 2px solid #F9461C;
+$border_thick: 6px solid #F9461C; 
+
+$header_bg: #F5EFE6;
+$footer_bg: #F5EFE6;
+$sidebar_first_bg: #F9461C;
+$sidebar_second_bg: #F5EFE6;
+$navigation_bg: #fff;
+
+//
+// Fonts
+//
+$main_font: "Helvetica Neue", helvetica, Arial, sans-serif;
+$title_font: "Lucida Grande", sans-serif;
+//$main_font: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$monospace_font: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+//
+// Colors
+//
+$link_color: #000;
+$visited_link_color: $link_color;
+$main_color: #F9461C; /*This site's main color: Orange*/
+$main_text_color: #222;
+$header_text_color: #4A4A4A; /*Slightly light black color*/
+$selection_text_color: #fff;
+$selection_bg_color: #F9461C;
+$hover_mobile_bg: #F5EFE6;
+$hover_bg_color: #00E649;
+
+//
+// Partials to be shared with all .scss files.
+////////////////////////////////////////
+@import "compass";                  // See http://compass-style.org
+@import "compass/reset/utilities";  
+@import "compass/css3/transition";
+@import "sprites";
+@import "mixins";                   // Import our custom mixins last.

@@ -1,0 +1,39 @@
+.contact-form {
+  label {
+    color: $main_color;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  
+  input,
+  select,
+  textarea {
+    border: 1px solid $main_color;
+  }
+  
+  input[type=checkbox] {
+    outline: 1px solid $main_color;
+  }
+  
+  input[type=text],
+  textarea {
+    padding: 5px;
+    margin:0;
+  }
+  
+  input[type=text],
+  textarea,
+  .grippie {
+    width: 90%; 
+    @include breakpoint($max-phone) {
+      width: 100%;
+    }
+  }
+  
+  input[type=submit] {
+    background-color: $main_color;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+}

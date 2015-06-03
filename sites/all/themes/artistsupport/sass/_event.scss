@@ -1,0 +1,31 @@
+#block-views-leaflet_events-upcoming_events {
+  width: 48.3%;
+  float: left;
+  margin-left: $section_margin;
+  margin-right: 0;
+  @include breakpoint($max-phone) {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: $section_margin*2;
+  }
+}
+
+//Styling for upcoming-events search
+.page-upcoming-events {
+  #block-system-main {
+    width: 49%;
+    float: left;
+    margin-right: $section_margin;
+    margin-bottom: $section_margin*3;
+    @include breakpoint($middle-desktop) {
+      width: 47%;
+      margin-right: $section_small_margin;
+    }
+    @include breakpoint($max-phone) {
+      width: 100%;
+      float: none;
+    }
+  }
+}

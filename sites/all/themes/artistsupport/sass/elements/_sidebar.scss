@@ -1,0 +1,21 @@
+.region-sidebar-second {
+  a {
+    position: relative;
+    display: block;
+    margin: 3% 0;
+    color: $main_color;
+    text-transform: uppercase;  
+  }
+  
+  padding-top: 21px;
+  h2 {
+    //padding: 5px;
+    color: $header_text_color;
+    //background: $sidebar_first_bg;
+    text-transform: uppercase;
+    @include font-size(22);
+    font-family: $title_font;
+    font-weight: bold;
+  }
+}
+

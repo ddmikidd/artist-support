@@ -1,0 +1,163 @@
+// Styling for exposed form
+// Hitta din kurs
+// Kommande utställningar
+
+.views-exposed-form {
+  border-bottom: $border_very_thin;
+  margin-bottom: $section_small_margin;
+  .form-item {
+    line-height: 1.6;
+    input[type=text] {
+      width: 100%;
+    }
+  }
+  label {
+    text-transform: uppercase;
+    font-weight: normal;
+    color: $main_color;
+  }
+}
+
+.views-exposed-widget {
+  float: left;
+  width: 49%;
+  @include breakpoint($mobile) {
+    clear: both;
+    width: 100%;
+  }
+  
+  .form-type-select {
+    @include breakpoint($mobile) {
+      margin-bottom: $section_margin;
+    }
+  }
+}
+
+.view-upcoming-events {
+  .view-content {
+    margin-top: $section_margin*2;
+  }
+}
+
+.page-upcoming-events,
+.node-type-class-overview {
+  .views-row {
+    position: relative;
+    .views-field {
+      &:not(:first-child) {
+        padding: 0 2%;
+        @include breakpoint($mobile) {
+          &:not(:last-child) {
+            width: 60%;
+          }
+        }
+      }
+    }
+    @include breakpoint($mobile) {
+      .views-field {
+        &:not(:first-child) {
+          padding: 0;
+        }
+      }
+    }
+  }
+  
+ .views-field-title {
+    @include font-size(20);
+    text-transform: uppercase;
+    @include breakpoint($mobile) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .views-row-odd,
+  .views-row-even {
+    width: 47.5%;
+    margin-bottom: $section_margin;
+    @include breakpoint($min-desktop) {
+      width: 46.3%;
+    }
+    @include breakpoint($tablet) {
+      width: 45.5%;
+    }
+    @include breakpoint($mobile) {
+      width: 100%;
+      clear: both;
+      padding-bottom: $section_margin;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .views-row-odd {
+    margin-right: 0.8%;
+    float: left;
+    @include breakpoint($tablet) {
+      margin-right: $section_small_margin;
+    }
+    @include breakpoint($mobile) {
+      margin-right: 0;
+    }
+    &.views-row-last {
+      clear: both;
+    }
+  }
+  
+  .views-row-even {
+    margin-left: $section_margin;
+    margin-right: 0;
+    float: right;
+    @include breakpoint($tablet) {
+      margin-left: $section_small_margin;
+    }
+  }
+  
+  .views-field-view-node {
+    a {
+      display: none;
+      @include breakpoint($mobile) {
+        // this is to hide readmore text
+        text-indent: -999px;
+        display: block;
+        position: absolute;
+        left: -15px;
+        right: -15px;
+        top: -10px;
+        height: 145px;
+        &:hover {
+          border-top: $border_very_thin;
+          border-bottom: $border_very_thin;
+          background-color: $hover_mobile_bg;
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+  .views-field-field-event-image,
+  .views-field-field-class-image {
+    &:hover {
+      opacity: 0.8;
+    }
+    @include breakpoint($mobile) {
+      float: right;
+      max-width: 43%;
+      margin-right: -$section_margin;
+    }
+  }
+}
+
+.views-field-field-event-type,
+.views-field-field-class-type {
+  margin-top: $section_margin;
+  color: $main_color;
+  text-transform: uppercase;
+  @include breakpoint($mobile) {
+    margin-top: 0;
+  }
+}
+
+
+

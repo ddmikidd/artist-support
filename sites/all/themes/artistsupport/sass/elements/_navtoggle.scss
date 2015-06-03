@@ -1,0 +1,47 @@
+.nav-toggle {
+  display: none;
+}
+
+@include breakpoint($max-phone) {
+  .nav-toggle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 0 15px;
+    top: -35px;
+  }
+
+  .nav-toggle__base {
+    position: absolute;
+    z-index: 10;
+    height: 35px;
+    width: 40px;
+    right: 11px;
+    background-color: #000;
+    border-radius: 4px;
+    margin-top: -32px;
+  }
+
+  .stripes {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    box-shadow: 0 8px #fff, 0 -8px #fff;  
+    margin-top: 16px;
+    margin-left: 8px;
+    .menu-expanded & {
+      @include transform(rotate(45deg));
+      box-shadow: none;
+      &:after {
+        content: " ";
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 25px;
+        background-color: #fff;
+        @include transform(rotate(-90deg));
+      }
+    }
+  }
+}

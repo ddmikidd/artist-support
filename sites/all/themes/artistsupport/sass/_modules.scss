@@ -1,0 +1,49 @@
+////////////////////////////////////////////////////////////////////////////////
+// Module Styles
+// --------------------
+// This partial defines the styles for modules. Most custom
+// styling should go here.
+//
+// Styling of standard HTML elements (paragraphs, headers, lists, etc...) can
+// be found in _base.scss.
+//
+// Positioning of major page elements can be found in _layout.scss.
+////////////////////////////////////////////////////////////////////////////////
+
+#header {
+  @include pad-size($section_padding);
+}
+//#header,
+#footer,
+//#navigation,
+#sidebar-first,
+#sidebar-second,
+#content_top,
+#content_bottom {
+  border:$border;
+}
+
+#sidebar-first {
+  //background: $sidebar_first_bg;
+}
+
+#sidebar-second {
+  //background: $sidebar_second_bg;
+}
+
+#navigation {
+  background: $navigation_bg;
+}
+
+#content-header {
+  .title {
+    border-bottom: $border_thin;
+  }
+}
+
+#footer {
+  background: $footer_bg;
+  border-top: $border_thin;
+  border-bottom: 6px solid #F9461C;
+}
+
